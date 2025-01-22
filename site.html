@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Meu Amor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background: #ff9999;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            color: black;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .carousel button.prev {
+            left: 10px;
+        }
+
+        .carousel button.next {
+            right: 10px;
+        }
+
+        .text {
+            margin: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            background: #333;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                font-size: 20px;
+                padding: 15px;
+            }
+
+            .text {
+                font-size: 16px;
+            }
+
+            .countdown {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Para o meu amor... Feliz aniversário ❤️
+    </header>
+
+    <div class="carousel">
+        <img src="image1.jpg" alt="Foto 1" class="active">
+        <img src="image2.jpg" alt="Foto 2">
+        <img src="image3.jpg" alt="Foto 3">
+        <!-- Adicione mais imagens aqui -->
+        <button class="prev">&#9664;</button>
+        <button class="next">&#9654;</button>
+    </div>
+
+    <div class="text">
+        Meu amor, cada dia ao seu lado tem sido um presente inestimável. Desde que começamos essa jornada juntos, aprendi o verdadeiro significado de felicidade e parceria. Você é minha inspiração, minha força e minha maior alegria. Obrigado por ser quem você é e por me fazer tão feliz. Hoje, no seu aniversário, quero lembrar o quanto você é especial e o quanto sou grato por tê-la ao meu lado. Feliz aniversário, meu amor! Que nosso amor continue crescendo mais forte a cada dia. ❤️
+    </div>
+
+    <div class="countdown" id="countdown"></div>
+
+    <script>
+        // Função para iniciar o cronômetro
+        function startCountdown(startDate) {
+            const countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                const now = new Date();
+                const elapsed = now - startDate;
+                const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((elapsed / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((elapsed / (1000 * 60)) % 60);
+                const seconds = Math.floor((elapsed / 1000) % 60);
+                countdownElement.textContent = `Estamos juntos há: ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000); // Atualiza a cada segundo
+        }
+
+        // Data de início do relacionamento (5 meses atrás, a partir de 26-01-2025)
+        const startDate = new Date(2024, 8, 26); // Setembro é mês 8 no JavaScript
+        startCountdown(startDate);
+
+        // Carrossel
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+
+        document.querySelector('.carousel .next').addEventListener('click', () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        });
+
+        document.querySelector('.carousel .prev').addEventListener('click', () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            images[currentIndex].classList.add('active');
+        });
+    </script>
+</body>
+</html>
