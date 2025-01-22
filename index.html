@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para o Meu Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Dancing Script', cursive;
             margin: 0;
             padding: 0;
             background: #000;
@@ -15,10 +16,20 @@
         }
 
         header {
-            background: #ff9999;
+            background: #ff4d4d;
             color: white;
             padding: 20px;
-            font-size: 24px;
+            font-size: 30px;
+            position: relative;
+        }
+
+        header::after {
+            content: '❤️❤️❤️';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
         }
 
         .carousel {
@@ -60,31 +71,41 @@
 
         .text {
             margin: 20px;
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 23px;
+            line-height: 1.8;
         }
 
         .countdown {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
             margin-top: 20px;
-            background: #333;
+            background: #ff4d4d;
+            color: white;
             padding: 10px;
             border-radius: 10px;
+            position: relative;
+        }
+
+        .countdown::after {
+            content: '❤️';
+            font-size: 18px;
+            position: absolute;
+            top: -10px;
+            right: 10px;
         }
 
         @media (max-width: 600px) {
             header {
-                font-size: 20px;
+                font-size: 24px;
                 padding: 15px;
             }
 
             .text {
-                font-size: 16px;
+                font-size: 18px;
             }
 
             .countdown {
-                font-size: 20px;
+                font-size: 22px;
             }
         }
     </style>
@@ -95,9 +116,12 @@
     </header>
 
     <div class="carousel">
-        <img src="image1.jpg" alt="Foto 1" class="active">
+        <img src="image11.jpg" alt="Foto 1" class="active">
         <img src="image2.jpg" alt="Foto 2">
         <img src="image3.jpg" alt="Foto 3">
+        <img src="image1.JPG" alt="Foto 4">
+        <img src="image4.JPG" alt="Foto 5">
+        <img src="image5.JPG" alt="Foto 6">
         <!-- Adicione mais imagens aqui -->
         <button class="prev">&#9664;</button>
         <button class="next">&#9654;</button>
