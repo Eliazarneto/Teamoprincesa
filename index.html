@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Rafaela</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #c62828;
+      color: white;
+      padding: 20px 15px;
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+
+    .declaration {
+      max-width: 800px;
+      width: 100%;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      line-height: 1.8;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-left: 5px solid #c62828;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .music-player {
+      text-align: center;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    .music-player button {
+      background-color: #c62828;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+
+    .music-player button:hover {
+      background-color: #a61c1c;
+    }
+
+    .music-player audio {
+      margin-top: 10px;
+      width: 90%;
+      max-width: 300px;
+    }
+
+    footer {
+      background-color: #c62828;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .counter {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    E o que mudou em mim tem nome: Rafaela
+  </header>
+
+  <main>
+    <div class="declaration">
+        <p>Rafaela,</p>
+
+        <p>Sabe… às vezes eu fico tentando entender como a gente chegou até aqui.
+        Como que, no meio de tantas pessoas, conversas e distrações, foi logo você que virou esse furacão dentro de mim.</p>
+        
+        <p>E, sinceramente, nem sei explicar direito. Só sei sentir.
+        Porque contigo é leve, é real… e mesmo com essa distância, com os medos e com a correria da vida, tem algo que me puxa pra perto de você toda vez.</p>
+        
+        <p>Eu amo o teu jeito de apoiar sem cobrar.
+        O modo como você me entende em silêncio, como se me enxergasse por dentro.
+        Amo a calma que você me traz, e ao mesmo tempo, essa inquietação boa que me faz querer ser melhor a cada dia.</p>
+        
+        <p>Você virou esse ponto de paz e bagunça ao mesmo tempo.
+        Uma mistura de calmaria com intensidade que eu nunca tive com ninguém.</p>
+        
+        <p>Nunca imaginei que a gente estaria assim, tão ligados, mesmo sem ter se olhado nos olhos pessoalmente.
+        Mas a verdade é que você me ganhou de um jeito diferente… daqueles que não se explica, só se sente.</p>
+        
+        <p>E hoje eu precisei fazer algo.
+        Algo que saísse da tela, do virtual, da rotina.
+        Eu precisava te ver, precisava te abraçar, te ter nem que fosse por 5 minutos como o combinado.</p>
+        
+        <p>Desculpa, mas eu menti.</p>
+        
+        <p>Eu viajei 100 km só pra te ver.
+        Teria viajado 1000 de fosse preciso. Distância nunca vai ser um problema quando no final do caminho eu te ver.
+        Porque eu precisava transformar o que a gente viveu no digital em realidade.
+        Queria olhar nos teus olhos e mostrar o quanto sou louco por você,
+        e o quanto sou capaz de tudo — absolutamente tudo — pra te fazer feliz.</p>
+    </div> 
+    <p></p>
+
+    <div class="music-player">
+      <button onclick="document.getElementById('music').play()">Ouvir nossa música</button>
+      <audio id="music" controls>
+        <source src="ANAVITÓRIA - Cor de Marte.mp3" type="audio/mpeg">
+        Seu navegador não suporta o player de áudio.
+      </audio>
+    </div>
+  </main>
+
+  <footer>
+    Te amo a exatamente: <span class="counter" id="loveCounter"></span>
+  </footer>
+
+  <script>
+    const startDate = new Date('2025-05-11T00:00:00');
+    const counterEl = document.getElementById('loveCounter');
+
+    function updateCounter() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const seconds = Math.floor(diff / 1000) % 60;
+      const minutes = Math.floor(diff / 1000 / 60) % 60;
+      const hours = Math.floor(diff / 1000 / 60 / 60) % 24;
+      const days = Math.floor(diff / 1000 / 60 / 60 / 24);
+
+      counterEl.textContent = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+    }
+
+    setInterval(updateCounter, 1000);
+    updateCounter();
+  </script>
+</body>
+</html>
