@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -30,26 +31,17 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 30px 15px;
+    .top-info {
+      background-color: #fff0f0;
+      padding: 20px 15px 10px;
+      text-align: center;
     }
 
-    .declaration {
-      max-width: 800px;
-      width: 100%;
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      line-height: 1.8;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 25px;
-      border-left: 5px solid #c62828;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.05);
-      margin-bottom: 30px;
+    .counter {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #c62828;
+      margin-bottom: 15px;
     }
 
     .music-player {
@@ -80,17 +72,34 @@
       max-width: 300px;
     }
 
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+
+    .declaration {
+      max-width: 800px;
+      width: 100%;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      line-height: 1.8;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-left: 5px solid #c62828;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
     footer {
       background-color: #c62828;
       color: white;
       padding: 15px;
       text-align: center;
       font-size: 1.1rem;
-    }
-
-    .counter {
-      font-weight: bold;
-      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -99,51 +108,51 @@
     E o que mudou em mim tem nome: Rafaela
   </header>
 
-  <main>
-    <div class="declaration">
-        <p>Rafaela,</p>
-
-        <p>Sabe… às vezes eu fico tentando entender como a gente chegou até aqui.
-        Como que, no meio de tantas pessoas, conversas e distrações, foi logo você que virou esse furacão dentro de mim.</p>
-        
-        <p>E, sinceramente, nem sei explicar direito. Só sei sentir.
-        Porque contigo é leve, é real… e mesmo com essa distância, com os medos e com a correria da vida, tem algo que me puxa pra perto de você toda vez.</p>
-        
-        <p>Eu amo o teu jeito de apoiar sem cobrar.
-        O modo como você me entende em silêncio, como se me enxergasse por dentro.
-        Amo a calma que você me traz, e ao mesmo tempo, essa inquietação boa que me faz querer ser melhor a cada dia.</p>
-        
-        <p>Você virou esse ponto de paz e bagunça ao mesmo tempo.
-        Uma mistura de calmaria com intensidade que eu nunca tive com ninguém.</p>
-        
-        <p>Nunca imaginei que a gente estaria assim, tão ligados, mesmo sem ter se olhado nos olhos pessoalmente.
-        Mas a verdade é que você me ganhou de um jeito diferente… daqueles que não se explica, só se sente.</p>
-        
-        <p>E hoje eu precisei fazer algo.
-        Algo que saísse da tela, do virtual, da rotina.
-        Eu precisava te ver, precisava te abraçar, te ter nem que fosse por 5 minutos como o combinado.</p>
-        
-        <p>Desculpa, mas eu menti.</p>
-        
-        <p>Eu viajei 100 km só pra te ver.
-        Teria viajado 1000 de fosse preciso. Distância nunca vai ser um problema quando no final do caminho eu te ver.
-        Porque eu precisava transformar o que a gente viveu no digital em realidade.
-        Queria olhar nos teus olhos e mostrar o quanto sou louco por você,
-        e o quanto sou capaz de tudo — absolutamente tudo — pra te fazer feliz.</p>
-    </div> 
-    <p></p>
-
+  <div class="top-info">
+    <div class="counter" id="loveCounter"></div>
     <div class="music-player">
-      <button onclick="document.getElementById('music').play()">Ouvir nossa música</button>
+      <button onclick="document.getElementById('music').play()">Ouça nossa música</button>
       <audio id="music" controls>
         <source src="ANAVITÓRIA - Cor de Marte.mp3" type="audio/mpeg">
         Seu navegador não suporta o player de áudio.
       </audio>
     </div>
+  </div>
+
+  <main>
+    <div class="declaration">
+      Rafaela,
+
+      Sabe… às vezes eu fico tentando entender como a gente chegou até aqui.
+      Como que, no meio de tantas pessoas, conversas e distrações, foi logo você que virou esse furacão dentro de mim.
+
+      E, sinceramente, nem sei explicar direito. Só sei sentir.
+      Porque contigo é leve, é real… e mesmo com essa distância, com os medos e com a correria da vida, tem algo que me puxa pra perto de você toda vez.
+
+      Eu amo o teu jeito de apoiar sem cobrar.
+      O modo como você me entende em silêncio, como se me enxergasse por dentro.
+      Amo a calma que você me traz, e ao mesmo tempo, essa inquietação boa que me faz querer ser melhor a cada dia.
+
+      Você virou esse ponto de paz e bagunça ao mesmo tempo.
+      Uma mistura de calmaria com intensidade que eu nunca tive com ninguém.
+
+      Nunca imaginei que a gente estaria assim, tão ligados, mesmo sem ter se olhado nos olhos pessoalmente.
+      Mas a verdade é que você me ganhou de um jeito diferente… daqueles que não se explica, só se sente.
+
+      E hoje eu precisei fazer algo.
+      Algo que saísse da tela, do virtual, da rotina.
+
+      Desculpa, mas eu menti.
+
+      Eu viajei 100 km só pra te ver.
+      Porque eu precisava transformar o que a gente viveu no digital em realidade.
+      Queria olhar nos teus olhos e mostrar o quanto sou louco por você,
+      e o quanto sou capaz de tudo — absolutamente tudo — pra te fazer feliz.
+    </div>
   </main>
 
   <footer>
-    Te amo a exatamente: <span class="counter" id="loveCounter"></span>
+    &copy; Feito com amor por alguém que te ama absurdamente.
   </footer>
 
   <script>
@@ -159,7 +168,7 @@
       const hours = Math.floor(diff / 1000 / 60 / 60) % 24;
       const days = Math.floor(diff / 1000 / 60 / 60 / 24);
 
-      counterEl.textContent = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+      counterEl.textContent = `Te amo há exatamente: ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
     }
 
     setInterval(updateCounter, 1000);
